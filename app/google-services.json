@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "286897512990",
+    "project_id": "appbrowser-d31be",
+    "storage_bucket": "appbrowser-d31be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286897512990:android:9d7313e11082e092a2040f",
+        "android_client_info": {
+          "package_name": "com.laboontech.webbrowser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286897512990-m3hmlkied9li23khsh9v1oqe32p7gf17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdHXj0hopCQOUxs_UkDQn0UoEcVE87Xuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286897512990-m3hmlkied9li23khsh9v1oqe32p7gf17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
