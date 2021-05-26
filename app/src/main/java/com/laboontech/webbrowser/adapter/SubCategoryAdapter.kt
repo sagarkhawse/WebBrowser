@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.facebook.drawee.view.SimpleDraweeView
 import com.laboontech.webbrowser.AgentWebActivity
 import com.laboontech.webbrowser.R
+import com.laboontech.webbrowser.apps.AppsWebsiteActivity
+import com.laboontech.webbrowser.browser.WebActivity
 import org.json.JSONArray
 
 
@@ -47,9 +49,9 @@ class SubCategoryAdapter(var context: Context, var jsonArray: JSONArray, var fra
         holder.imgSubcategory.setImageURI(jsonObject.getString("h_image"))
 
         holder.mainLayout.setOnClickListener {
-             val intent = Intent(context, AgentWebActivity::class.java)
-               intent.putExtra("url",  jsonObject.getString("h_url"))
-               context.startActivity(intent)
+            val intent = Intent(context, AppsWebsiteActivity::class.java)
+            intent.putExtra("URL", jsonObject.getString("h_url"))
+            context.startActivity(intent)
         }
 
     }

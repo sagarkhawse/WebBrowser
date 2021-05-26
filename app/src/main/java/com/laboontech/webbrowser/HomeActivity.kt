@@ -1,7 +1,9 @@
 package com.laboontech.webbrowser
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.ImageView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -14,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.laboontech.webbrowser.browser.WebActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -23,29 +26,31 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         Fresco.initialize(this)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+        initViews()
+    }
+    private fun initViews(){
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        setSupportActionBar(toolbar)
+        val imgBrowser = findViewById<ImageView>(R.id.imgBrowser)
+
         appBarConfiguration = AppBarConfiguration(setOf(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
+
+        imgBrowser.setOnClickListener {
+            val intent = Intent(this, WebActivity::class.java)
+            startActivity(intent)
+        }}
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.home, menu)
-        return true
+        return false
     }
 
     override fun onSupportNavigateUp(): Boolean {

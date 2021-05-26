@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:padding="20dp"
+                    app:srcCompat="@raw/logo"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="App Browser"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:paddingBottom="40dp">
+
+                <RelativeLayout
+                    android:id="@+id/nav_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/homenav"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:id="@+id/tv_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Home"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nav_browser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_browsernav"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Browser"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nav_vpn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/vpnnav"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="VPN"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/nav_Products"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/shoppingbags"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Products"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".3dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@color/colorgray" />
+
+                <RelativeLayout
+                    android:id="@+id/nav_terms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/terms"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Terms &amp; Conditions"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nav_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/sharenav"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Share"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nav_support"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:src="@raw/headphones"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Support"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nav_Aboutus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/information"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="About Us"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nav_faq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_help"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="FAQ's"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/nav_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/nav_drawer_rvpadding">
+
+                    <ImageView
+                        android:layout_width="@dimen/nav_drawericonsize"
+                        android:layout_height="@dimen/nav_drawericonsize"
+                        android:layout_centerVertical="true"
+                        android:src="@raw/rate"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:text="Rate us"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/nav_drawertextsize" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

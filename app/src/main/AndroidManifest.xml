@@ -19,10 +19,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".AgentWebActivity"
+            android:theme="@style/Theme.WebBrowser.NoActionBar" />
 
-        </activity>
-        <activity android:name=".AgentWebActivity" />
+        <activity
+            android:name=".browser.TabActivity"
+            android:theme="@style/Theme.WebBrowser.NoActionBar" />
+
+        <activity
+            android:name=".browser.WebActivity"
+            android:theme="@style/Theme.WebBrowser.NoActionBar" />
+        <activity
+            android:name=".browser.BookamrksActivity"
+            android:theme="@style/Theme.WebBrowser.NoActionBar" />
+        <activity
+            android:name=".browser.HistoryActivity"
+            android:theme="@style/Theme.WebBrowser.NoActionBar" />
+        <activity
+            android:name=".apps.AppsWebsiteActivity"
+            android:theme="@style/Theme.WebBrowser.NoActionBar" />
     </application>
 
 </manifest>
