@@ -43,6 +43,7 @@ class HomeActivity : AppCompatActivity() {
 
         imgBrowser.setOnClickListener {
             val intent = Intent(this, WebActivity::class.java)
+            intent.putExtra("URL", "https://www.google.com")
             startActivity(intent)
         }}
 

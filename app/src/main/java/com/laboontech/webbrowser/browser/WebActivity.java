@@ -40,7 +40,7 @@ public class WebActivity extends AppCompatActivity {
     private static final String TAG = "web:activity";
 
     private static final int SPEECH_REQUEST_CODE = 1;
-    private static final String GOOGLE_URL = "https://www.google.com";
+    private static  String GOOGLE_URL = "https://www.google.com";
     private static final boolean IS_PRIVATE = false;
     static List<WebsiteModel> websites = new ArrayList<>();
     ActivityWebBinding binding;
@@ -69,6 +69,7 @@ public class WebActivity extends AppCompatActivity {
         InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         in.hideSoftInputFromWindow(binding.etSearch.getWindowToken(), 0);
 
+        getIntentData();
         sessonManager = new SessionManager(this);
 
 
@@ -287,7 +288,8 @@ public class WebActivity extends AppCompatActivity {
         binding.viewpager2.setCurrentItem(viewPager2Adapter.getItemCount() - 1);
 
 
-        getIntentData();
+
+        loadUrliNFragment(GOOGLE_URL);
 
         binding.etSearch.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -313,6 +315,15 @@ public class WebActivity extends AppCompatActivity {
         //chk();
     }
 
+
+
+    private void getIntentData() {
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("URL");
+        if (!url.equals("")) {
+            GOOGLE_URL = url;
+        }
+    }
    /* private void chk() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("admins").whereEqualTo("flag", true).get()
@@ -368,7 +379,7 @@ public class WebActivity extends AppCompatActivity {
 
 
 
-    private void getIntentData() {
+  /*  private void getIntentData() {
         Intent intent = getIntent();
         if (intent != null) {
             String str = intent.getStringExtra("words");
@@ -383,7 +394,7 @@ public class WebActivity extends AppCompatActivity {
 
             }
         }
-    }
+    }*/
 
     @Override
     public void onBackPressed() {

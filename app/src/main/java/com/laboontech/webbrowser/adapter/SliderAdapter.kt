@@ -28,12 +28,11 @@ class SliderAdapter(private val context: Context, var jsonArray: JSONArray) : Sl
     override fun onBindViewHolder(viewHolder: SliderAdapterVH, position: Int) {
         val jsonObject = jsonArray.getJSONObject(position)
         Log.e("Image URL", jsonObject.getString("image"))
-        viewHolder.imageViewBackground.setImageURI(Uri.parse(jsonObject.getString("image")))
-       /* Glide.with(viewHolder.itemView)
+        Glide.with(viewHolder.itemView)
                 .load(jsonObject.getString("image"))
                 .fitCenter()
-                .into(viewHolder.imageViewBackground)*/
-      //  viewHolder.itemView.setOnClickListener(View.OnClickListener { Toast.makeText(context, "This is item in position $position", Toast.LENGTH_SHORT).show() })
+                .into(viewHolder.imageViewBackground)
+       viewHolder.itemView.setOnClickListener(View.OnClickListener { Toast.makeText(context, "This is item in position $position", Toast.LENGTH_SHORT).show() })
     }
 
     override fun getCount(): Int {

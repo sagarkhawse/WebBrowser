@@ -49,7 +49,7 @@ class SubCategoryAdapter(var context: Context, var jsonArray: JSONArray, var fra
         holder.imgSubcategory.setImageURI(jsonObject.getString("h_image"))
 
         holder.mainLayout.setOnClickListener {
-            val intent = Intent(context, AppsWebsiteActivity::class.java)
+            val intent = Intent(context, WebActivity::class.java)
             intent.putExtra("URL", jsonObject.getString("h_url"))
             context.startActivity(intent)
         }
