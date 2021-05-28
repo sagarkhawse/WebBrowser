@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object APIClient {
 
-    var Base_URL = "https://cricdoers.online/TradeDoers/API/"
+    var Base_URL = "https://laboontech.com/WebBrowser/API/"
     val getClient: APIInterface
     get() {
         val gson = GsonBuilder()
