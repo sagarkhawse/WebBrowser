@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import androidx.annotation.Nullable;
@@ -196,6 +197,12 @@ public class WebActivity extends AppCompatActivity {
                         @Override
                         public void setWebObj(WebView webObj) {
                             fragmentWebview = webObj;
+                            String DESKTOP_USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36";
+                           String MOBILE_USER_AGENT = "Mozilla/5.0 (Linux; U; Android 4.4; en-us; Nexus 4 Build/JOP24G) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30";
+
+                            //Choose Mobile/Desktop client.
+                            WebSettings settings = fragmentWebview.getSettings();
+                            settings.setUserAgentString(DESKTOP_USER_AGENT);
                         }
 
                         @Override

@@ -132,6 +132,12 @@ public class BrowserFragment extends Fragment {
             webView.clearFormData();
             webView.getSettings().setSavePassword(false);
             webView.getSettings().setSaveFormData(false);
+
+
+
+
+
+
             loadUrl(GOOGLE_URL);
             if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
                 // Turning on the light mode
@@ -156,12 +162,11 @@ public class BrowserFragment extends Fragment {
             } else {
                 loadUrl(GOOGLE_URL);
             }
-
-
             browserFragmentListner.setWebObj(webView);
 
 
         }
+
 
         binding.swipe.setOnRefreshListener(() -> loadUrl(binding.webview.getUrl()));
         initListner();
@@ -200,9 +205,36 @@ public class BrowserFragment extends Fragment {
         });
     }
 
+
+    public void setDesktopMode(WebView webView,boolean enabled) {
+        String newUserAgent = webView.getSettings().getUserAgentString();
+        if (enabled) {
+            try {
+                String ua = webView.getSettings().getUserAgentString();
+                String androidOSString = webView.getSettings().getUserAgentString().substring(ua.indexOf("("), ua.indexOf(")") + 1);
+                newUserAgent = webView.getSettings().getUserAgentString().replace(androidOSString, "(X11; Linux x86_64)");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            newUserAgent = null;
+        }
+
+        webView.getSettings().setUserAgentString(newUserAgent);
+        webView.getSettings().setUseWideViewPort(enabled);
+        webView.getSettings().setLoadWithOverviewMode(enabled);
+        webView.reload();
+    }
+
     private void loadUrl(String url) {
         if (url != null) {
             binding.webview.loadUrl(url);
+            String DESKTOP_USER_AGENT = "Mozilla/5.0 (Linux; Android 5.1.1; Nexus 5 Build/LMY48B; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36";
+            String MOBILE_USER_AGENT = "Mozilla/5.0 (Linux; U; Android 4.4; en-us; Nexus 4 Build/JOP24G) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30";
+
+            //Choose Mobile/Desktop client.
+            WebSettings settings =  binding.webview.getSettings();
+            settings.setUserAgentString(DESKTOP_USER_AGENT);
             binding.webview.setWebViewClient(new WebViewClient() {
 
                 @Override
@@ -255,6 +287,7 @@ public class BrowserFragment extends Fragment {
 
                 }
             });
+
 
         }
     }
